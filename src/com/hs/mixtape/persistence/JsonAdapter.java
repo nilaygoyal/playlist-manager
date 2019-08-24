@@ -18,7 +18,7 @@ import com.hs.mixtape.datamodel.MixTape;
  *
  */
 public class JsonAdapter {
-	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+	private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
 	public static MixTape readMixTape(String filename) throws FileNotFoundException {
 		MixTape mixtape = GSON.fromJson(new BufferedReader(new FileReader(new File(filename))), MixTape.class);
 		return mixtape;
